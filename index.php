@@ -21,7 +21,12 @@
                   <?php endif; ?>
                 </div>
                 <span class="article__card-cat">
-
+                  <?php $posttags = get_the_tags();
+                  if ($posttags) {
+                    foreach ($posttags as $tag) {
+                      echo $tag->name;
+                    }
+                  } ?>
                 </span>
                 <div class="article__card-content">
                   <h3 class="article__card-content-ttl"><?php echo get_the_title(); ?></h3>
